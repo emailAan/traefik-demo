@@ -27,7 +27,6 @@ ENV PATH="./node_modules/.bin:$PATH"
 COPY --from=build /usr/src .
 COPY . .
 
-
 EXPOSE 80
 
 # Start the server for Next.js using Node.js

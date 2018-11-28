@@ -1,0 +1,14 @@
+{
+    "standard.enable": true,
+    "standard.autoFixOnSave": true,
+    "standard.options": {
+        "ignore": [
+            "node_modules/**"
+        ],
+        "globals": [
+            "fetch"
+        ],
+        "parser": "babel-eslint",
+    },
+    "javascript.implicitProjectConfig.checkJs": true
+}

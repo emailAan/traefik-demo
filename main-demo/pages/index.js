@@ -5,7 +5,7 @@ const Index = (props) => (
   <div>
     <h1>Hello Next.js</h1>
     <pre><code>{props.shows}</code></pre>
-    <a style={{color: 'purple', backgroundColor: 'orange', border: 'outset 1px darkgrey', padding: 2, borderRadius: 5}}
+    <a style={{ color: 'purple', backgroundColor: 'orange', border: 'outset 1px darkgrey', padding: 2, borderRadius: 5 }}
       onClick={() => {
         console.log('fetching')
         Index.fetchWhoami(null)
@@ -15,13 +15,13 @@ const Index = (props) => (
 
 Index.fetchWhoami = async (req) => {
   const url = req ? 'http://reverse-proxy/whoami/' : '/whoami'
-  const res = await fetch(url, {'headers': {'Host': 'main.localhost'}})
+  const res = await fetch(url, { 'headers': { 'Host': 'main.localhost' } })
   const data = await res.text()
 
   return data
 }
 
-Index.getInitialProps = async function ({req}) {
+Index.getInitialProps = async function ({ req }) {
   const data = await Index.fetchWhoami(req)
 
   console.log(data)
