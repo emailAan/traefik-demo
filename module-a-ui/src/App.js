@@ -6,8 +6,7 @@ class App extends Component {
   state = { message: 'no message yet' }
 
   async getMessage () {
-    const url = 'http://localhost:3000/'// '/module-a-api'
-    const res = await fetch(url, { 'headers': { 'Host': 'main.localhost' } })
+    const res = await fetch('/api/modulea')
 
     try {
       const data = await res.json()

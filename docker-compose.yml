@@ -18,7 +18,16 @@ services:
 
   main:
     image: main
-    ports:
-      - "87:80"
     labels:
       - "traefik.frontend.rule=Host:main.localhost"
+
+  module-a-ui:
+    image: module-a-ui
+    labels:
+      - "traefik.frontend.rule=Host:modulea.localhost"
+      # - "traefik.frontend.rule=PathStrip:/ui/modulea"
+
+  module-a-api:
+    image: module-a-api
+    labels:
+      - "traefik.frontend.rule=Host:modulea.localhost,localhost;PathStrip:/api/modulea"

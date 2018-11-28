@@ -9,6 +9,6 @@ app.get('/', function (req, res) {
   res.status(200).send({ message: 'Hello from module A!' })
 })
 
-var server = app.listen(3000, function () {
+var server = app.listen(80, function () {
   console.log('app running on port.', server.address().port)
 })
